@@ -32,7 +32,7 @@
                 </div>
                 <div class="form-group">
                     <label>Harga Per KM</label>
-                    <input type="number" name="hargamob" class="form-control" readonly value="<?= $mobil['harga'] ?>">
+                    <input type="number" name="hargamob" class="form-control" readonly value="<?= $mobil['harga_km'] ?>">
                 </div>
                 <div class="form-group">
                     <label>Pelanggan</label>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="form-group">
                     <label>DP /Uang Muka(Rp)</label>
-                    <input type="number" class="form-control" readonly name="uangMuka" value="<?= $sewa['uang_muka'] ?>">
+                    <input type="number" class="form-control" readonly name="uangMuka" value="<?= $sewa['uang_muka_dibayar'] ?>">
                 </div>
                 <div class="form-group">
                     <label>Tanggal Pinjam</label>
@@ -54,11 +54,7 @@
                     <label>KM Akhir</label>
                     <input type="number" class="form-control" name="kmAkhir" value="<?= substr($sewa['km_awal'], 0, -3) ?>">
                 </div>
-
-                <div class="form-group">
-                    <label>Tanggal Kembali</label>
-                    <input type="date" class="form-control" name="tglKembali">
-                </div>
+                
                 <input type="submit" class="btn btn-primary" value="Simpan">
             </form>
         </div>

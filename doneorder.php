@@ -18,8 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $uangmuka = $_POST['uangMuka'];
         $hargaPerKM = $_POST['hargamob'];
         $tglPinjam = $_POST['tglPinjam'];
-        $tglKembali = $_POST['tglKembali'];
-        $tot_harga = (($kmakhir - $kmawal) * $hargaPerKM) - $uangmuka;
+        $tot_harga = (($kmakhir - $kmawal) * $hargaPerKM) + $uangmuka;
         $status = 'AKTIF';
 
         $updateMobil = "UPDATE mobil SET odometer=?, s_mobil=? WHERE id_mobil=?";
@@ -34,9 +33,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmtInsertKM->execute();
         $stmtInsertKM->close();
 
-        $updateSewa = "UPDATE sewa SET tgl_kembali=?, km_akhir=?, harga_akhir=? WHERE id_sewa=?";
+        $updateSewa = "UPDATE sewa SET km_akhir=?, harga_akhir=? WHERE id_sewa=?";
         $stmtUpdateSewa = $koneksi->prepare($updateSewa);
-        $stmtUpdateSewa->bind_param("diii", $tglKembali, $kmakhir, $tot_harga, $idorder);
+        $stmtUpdateSewa->bind_param("iii", $kmakhir, $tot_harga, $idorder);
         $stmtUpdateSewa->execute();
         $stmtUpdateSewa->close();
 

@@ -41,8 +41,8 @@
                             <td><?php echo $data['merk']; ?></td>
                             <td><?php echo $data['nama']; ?></td>
                             <td><?php echo $data['tgl_sewa']; ?></td>
-                            <td><?php echo $data['lama_sewa']; ?></td>
-                            <td><?php echo $data['harga_akhir']; ?></td>
+                            <td><?php echo $data['lama_sewa']; ?> Hari</td>
+                            <td>Rp. <?php echo $data['harga_akhir']; ?></td>
                             <td>
                                 <a href="?x=dorder&id=<?php echo $data['id_sewa']; ?>" class="btn btn-success"><i class="fa fa-undo"></i></a>
                                 <a href="?x=horder&id=<?php echo $data['id_sewa']; ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>

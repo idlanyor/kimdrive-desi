@@ -20,6 +20,7 @@
                         <th>Mobil</th>
                         <th>Tanggal Sewa</th>
                         <th>Pembayaran</th>
+                        <th>Tanggal Kembali</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,6 +34,7 @@
                             <td><?php echo $data['mobil']; ?></td>
                             <td><?php echo $data['tanggal_sewa']; ?></td>
                             <td><?php echo $data['pembayaran']; ?></td>
+                            <td><?php echo $data['tanggal_kembali']; ?></td>
                         </tr>
                     <?php
                         $no++;
