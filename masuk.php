@@ -3,7 +3,7 @@ include("konek.php");
 session_start();
 $username = $_POST['txtUsername'];
 $password = $_POST['txtPassword'];
-$cek = mysqli_query($konek, "select * from admin where username='$username' and password='$password'") or die(mysqli_error());
+$cek = mysqli_query($konek, "select * from admin where username='$username' and password='$password'");
 $data = mysqli_fetch_array($cek);
 $banyak = mysqli_num_rows($cek);
 if ($banyak >= 1) {
@@ -17,5 +17,5 @@ if ($banyak >= 1) {
         alert("Username atau Password Masih Salah!");
     </script>
 <?php
-    header("Location:login.php");
+    // header("Location:login.php");
 }
